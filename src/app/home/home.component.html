@@ -19,12 +19,11 @@
           Click me to send an Analytics event
         </button>
         <p>{{ quote }}</p>
-
         <mat-card title="Categories">
           <mat-card-title title="Categorties"> Categories </mat-card-title>
-          <mat-selection-list [multiple]="false">
+          <mat-selection-list [multiple]="false" ngClass="categories">
             <mat-list-option *ngFor="let category of quoteCategories">
-              <a (click)="handleRoute(category)">{{ category }}</a>
+              <a [routerLink]="['/category/', category]">{{ category }}</a>
             </mat-list-option>
           </mat-selection-list>
         </mat-card>
