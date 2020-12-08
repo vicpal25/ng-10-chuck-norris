@@ -1,1 +1,6 @@
-<p>category works!</p>
+<div class="container">
+  <mat-card-subtitle>
+    <app-loader [isLoading]="isLoading" size="1.5"></app-loader>
+    <q [hidden]="isLoading">{{ quote }}</q>
+  </mat-card-subtitle>
+</div>

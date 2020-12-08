@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 import { CoreModule } from '@core';
-import { QuoteService } from './quote.service';
+import { QuoteService } from '../services/quote.service';
 
 describe('QuoteService', () => {
   let quoteService: QuoteService;

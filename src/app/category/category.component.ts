@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { QuoteService } from '../services/quote.service';
+import { finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-category',
@@ -6,7 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./category.component.scss'],
 })
 export class CategoryComponent implements OnInit {
-  constructor() {}
+  quote: string | undefined;
+  isLoading = false;
+  constructor(private quoteService: QuoteService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.isLoading = true;
+    this.quoteService
+      .getRandomQuote({ category: 'dev' })
+      .pipe(
+        finalize(() => {
+          this.isLoading = false;
+        })
+      )
+      .subscribe((quote: string) => {
+        this.quote = quote;
+      });
+  }
 }
