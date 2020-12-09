@@ -22,7 +22,6 @@ export class ShellComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    console.log('IS IN CATEGORY', this.router.url.indexOf('category'));
     this.canGoHome = this.router.url.indexOf('/category') >= 0 ? true : false;
   }
 

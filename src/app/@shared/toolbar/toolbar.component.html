@@ -5,18 +5,12 @@
       <mat-icon>menu</mat-icon>
     </button>
     <!-- <span>{{ title }}</span> -->
-    <span>Title</span>
   </mat-toolbar-row>
   <mat-toolbar-row ngClass="subMenu">
-    <span class="example-spacer"></span>
-
-    <span *ngIf="showHomeLink">
-      <a routerLink="/home" routerLinkActive="active">
-        <span translate>Home</span>
-        <mat-icon>home</mat-icon>
-      </a>
-    </span>
-
+    <button mat-icon-button class="example-icon" routerLink="/home" aria-label="Example icon-button with share icon">
+      Home
+      <mat-icon>home</mat-icon>
+    </button>
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
       Share
       <mat-icon>share</mat-icon>
