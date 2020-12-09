@@ -11,15 +11,20 @@ import { AuthenticationService, CredentialsService } from '@app/auth';
   styleUrls: ['./shell.component.scss'],
 })
 export class ShellComponent implements OnInit {
+  canGoHome = false;
+
   constructor(
     private router: Router,
-    private titleService: Title,
+    // private titleService: Title,
     private authenticationService: AuthenticationService,
     private credentialsService: CredentialsService,
     private media: MediaObserver
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log('IS IN CATEGORY', this.router.url.indexOf('category'));
+    this.canGoHome = this.router.url.indexOf('/category') >= 0 ? true : false;
+  }
 
   logout() {
     this.authenticationService.logout().subscribe(() => this.router.navigate(['/login'], { replaceUrl: true }));
@@ -34,7 +39,7 @@ export class ShellComponent implements OnInit {
     return this.media.isActive('xs') || this.media.isActive('sm');
   }
 
-  get title(): string {
-    return this.titleService.getTitle();
-  }
+  // get title(): string {
+  //   return this.titleService.getTitle();
+  // }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { finalize } from 'rxjs/operators';
-
+import { ActivatedRoute, Router } from '@angular/router';
 import { QuoteService } from '../services/quote.service';
 
 @Component({
@@ -12,8 +12,11 @@ export class HomeComponent implements OnInit {
   quote: string | undefined;
   quoteCategories: string[] | [];
   isLoading = false;
+  contextCategory: string | undefined;
 
-  constructor(private quoteService: QuoteService) {}
+  constructor(private quoteService: QuoteService, private router: Router) {
+    this.contextCategory = this.router.url;
+  }
 
   ngOnInit() {
     this.isLoading = true;

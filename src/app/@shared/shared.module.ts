@@ -4,10 +4,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { MaterialModule } from '@app/material.module';
 import { LoaderComponent } from './loader/loader.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 @NgModule({
   imports: [FlexLayoutModule, MaterialModule, CommonModule],
-  declarations: [LoaderComponent],
-  exports: [LoaderComponent],
+  declarations: [LoaderComponent, ToolbarComponent],
+  exports: [LoaderComponent, ToolbarComponent],
 })
 export class SharedModule {}
