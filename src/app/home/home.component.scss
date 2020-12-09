@@ -8,10 +8,19 @@ q {
   quotes: "« " " »";
 }
 
+.cardTitle {
+  font-size: 18x !important;
+}
+
 .categories {
-  a {
-    text-decoration: none;
-    color: #2196f3;
-    font-size: 1.3rem;
+  .categoryOption {
+    height: 25px;
+    line-height: 25px;
+
+    a {
+      text-decoration: none;
+      color: #2196f3;
+      font-size: 14px;
+    }
   }
 }

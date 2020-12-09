@@ -7,9 +7,9 @@
       </mat-card-subtitle>
       <mat-card-actions>
         <mat-card title="Categories">
-          <mat-card-title title="Categorties"> Categories </mat-card-title>
+          <mat-card-title title="Categorties" ngClass="cardTitle"> Categories </mat-card-title>
           <mat-selection-list [multiple]="false" ngClass="categories">
-            <mat-list-option *ngFor="let category of quoteCategories">
+            <mat-list-option *ngFor="let category of quoteCategories" ngClass="categoryOption">
               <a [routerLink]="['/category/', category]">{{ category }}</a>
             </mat-list-option>
           </mat-selection-list>
